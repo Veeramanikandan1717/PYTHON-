@@ -1,0 +1,38 @@
+# SINGLY LINKED LIST
+class new_node:
+    def __init__(self,data):
+        self.val = data
+        self.tail = None
+
+
+class singly:
+    def __init__(self):
+        self.head = None
+        self.temp = None
+
+    def insert(self,val):
+        add = new_node(val)
+        if self.head == None:
+            self.head = add
+            self.temp = add
+        else:
+            self.temp.tail = add
+            self.temp = add
+
+    def display(self):
+        head = self.head
+        while head!=None:
+           print(head.val)
+           head=head.next
+
+
+obj = singly()
+s = 0
+while (s == 0):
+    val = int(input())
+    if val > 0:
+        obj.insert(val)
+    else:
+        break
+obj.display()
+
